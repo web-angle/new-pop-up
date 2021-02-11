@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="col-5 mx-auto mt-5">
+    <br class="my-5">
+    <form method="POST" class="contact-form">{% csrf_token %}
+        <input required class="form-control" type="text" name="key1" placeholder="Key"><br>
+        <input required class="form-control"  type="text" name="key2" placeholder="Your Secret Key"><br>
+        <button type="submit" class="btn btn-success">Submit Now</button>
+    </form>
+</div>
+{% endblock %}
+
+

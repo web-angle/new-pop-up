@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hello man</title>
+</head>
+<body>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<script type="text/javascript">
+    // window.opener.location = 'index.html';
+    // setTimeout('window.close()', 2000);
+
+    // console.log(window.document.getElementsByTagName("p")[0]);
+	 // if (performance.navigation.type == 1) {
+		//     window.location.reload();.
+		//   } else {
+		//     console.log( "This page is not reloaded");
+		//   }
+		// console.log(window.location.pathname);
+		// console.log(window.location.href);
+
+		// console.log(document.body.innerHTM);
+
+		window.addEventListener('load', () => {
+		     // console.log(window.document.body.innerHTML);
+		     // or
+		     // console.log(window.document.body.innerText);
+		});
+		// window.onload = function () { console.log('yes'); };
+		// console.log(window);
+		window.onload = function() {
+				  console.log('yes');
+				  console.log(window.location.href);
+				};
+
+</script>
+
+</body>// 
+</html>	
+
+https://javascript.info/cross-window-communication
+if it comes from another origin, then we can’t access the content of that window: variables, document, anything.

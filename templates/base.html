@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+	{% block head %}
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	{% endblock %}
+
+</head>
+<body>
+{% include 'navbar.html' %}
+<br class="my-4">
+{% block content %}
+
+{% endblock %}
+
+
+<script>
+
+{% block script %}
+
+{% endblock %}
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta name="google-signin-client_id" content="290071372201-2mpkpkaejbiiqd7e533smucokgbc3rhg.apps.googleusercontent.com">
+	{% endblock %}
+
+{% block content %}
+
+<div class="container">
+<a href="/client-creds" class="btn btn-success my-3" onclick="showMsgs()" name="clientCreds">Client Credentials</a>
+	<br>
+
+ <input class="btn btn-primary" type="button" value="Authorize" name="btnOpenPopup" onClick="OpenNewWindow()" />
+</div>
+<div class="container mt-4">
+<!--	<div class="g-signin2" data-onsuccess="onSignIn"></div>-->
+</div>
+{% endblock %}
+
+{% block script %}
+	function OpenNewWindow()
+         {
+			  var MyPath = "https://developer.api..com/authentication/v1/authorize?response_type=code&client_id=RHWtQGnuMxOR0Gc3sZJrmA3aGqcappQJ&redirect_uri=https://bim360connectorauthcode.azurewebsites.net/api/callback&scope=data:read";
+            var win = window.open(MyPath, "", "toolbar=no,status=no,menubar=no,location=center,scrollbars=no,resizable=no,height=500,width=657");
+			var parent = win.opener;
+			// console.log(win);
+			win.onload = function() {
+				  console.log('yes');
+				  console.log(win.location.href);
+				};
+			win.onload = function () {
+				console.log('yes');
+				console.log(win.document);
+				};
+
+			if (win.document.readyState === 'complete') {
+				console.log(win.location.href);
+			};
+
+
+			win.addEventListener('onload', () => {
+				 console.log('yes');
+				 console.log(win.document.body.innerHTML);
+				 // or
+				 console.log(win.document.body.innerText);
+			});
+         }
+
+			// console.log(win.document.body);
+
+			// console.log(win.location.url);
+{% endblock %}
+
+
+
+
+<!--https://bim360connectorauthcode.azurewebsites.net/api/callback?code=xSAQ9A5K2MEq0Pdbmr2j_tK9b_VeucywVhEh4r6m-->
+
+<!--<a class="btn btn-info" href="https://developer.api.autodesk.com/authentication/v1/authorize?response_type=code&client_id=QfFDg8lZnaIA5ETChbeDTQzPvti7Qzxs&redirect_uri=http://b5223440dc8f.ngrok.io/success&scope=data:read">Authorize</a>-->
+
+
+<!--https://developer.api.autodesk.com/authentication/v1/authorize?response_type=code&client_id=QfFDg8lZnaIA5ETChbeDTQzPvti7Qzxs&redirect_uri=https://df283e2c769a.ngrok.io/success&scope=data:read-->
+// console.log(win.document.getElementsByTagName("div")[0]);
+			// console.log(win.opener);
+			// console.log(win.location.url);
